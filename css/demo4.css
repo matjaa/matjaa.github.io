@@ -1,0 +1,53 @@
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size:5em;
+}
+
+html, 
+body {
+    height:100%;
+    margin:0%
+}
+
+section {
+    height:100vh;
+}
+
+#kalatori {
+    background:lightblue;
+}
+
+#markkinat {
+    background:lightgreen;
+}
+
+#hinnasto {
+    background:lightsalmon;
+}
+
+#otayhteytta {
+    background:lightgoldenrodyellow;
+}
+
+#sijainti {
+    background:lightslategrey;
+}
+
+#topBtn {
+    display:none; /*ei näy aluksi*/
+    position:fixed;
+    bottom:20px;
+    right:30px;
+    z-index:top;
+    font-size:2em;
+    border:none;
+    outline:none;
+    background-color:#0000ff;
+    color:#ffffff;
+    padding:15px;
+    border-radius:4px;
+}
+
+#topBtn:hover {
+    background-color:#555;
+}
