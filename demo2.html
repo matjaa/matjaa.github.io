@@ -11,7 +11,7 @@
 
     <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
 
-    <ul>
+    <ul class="navi">
         <li><a href="#kalatori">Kalatori</a></li>
         <li><a href="#markkinat">Markkinat</a></li>
         <li><a href="#hinnasto">Hinnasto</a></li>
@@ -46,98 +46,103 @@
             <li>Syysmarkkinat tiistai 13.10. klo 7–15</li>
             <li>Joulumarkkinat tiistai 15.12. klo 7–15</li>
         </ul>
-        <img src="./kuvat/mustekala.jpg" alt="mustekala">
-        <img src="./kuvat/pienikala.jpg" alt="pienikala">
-        <img src="./kuvat/rapu.jpg" alt ="rapu">
 
+        <div id="kuvat">
+        <img src="./kuvat/mustekala.jpg" alt="mustekala" class="round">
+        <img src="./kuvat/pienikala.jpg" alt="pienikala" class="round">
+        <img src="./kuvat/rapu.jpg" alt ="rapu" class="round">
+</div>
 </section>
 
 
 
 <section id="hinnasto">
-
-        <a name ="hinnasto"><h3>Hinnasto</h3></a>
-        <img src="./kuvat/tori.jpg" alt="tori"><br>
-        paikkakartta
-
-        <table>
-            <tr>
-                <th>Tunnus</th>
-                <th>Ala m&sup2;</th>
-                <th>Hinta &euro;</th>
-            </tr>
-            <tr>
-                <td>A1</td>
-                <td>15</td>
-                <td>60</td>
-            </tr>
-            <tr>
-                <td>A2</td>
-                <td>15</td>
-                <td>60</td>
-            </tr>
-            <tr>
-                <td>A3</td>
-                <td>15</td>
-                <td>60</td>
-            </tr>
-            <tr>
-                <td>A4</td>
-                <td>15</td>
-                <td>60</td>
-            </tr>
-            <tr>
-                <td>B1</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B2</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B3</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B4</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B5</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B6</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B7</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B8</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B9</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-            <tr>
-                <td>B10</td>
-                <td>8</td>
-                <td>40</td>
-            </tr>
-        </table>
-
+    <div id="hinta-alue">
+                <a name ="hinnasto"><h3>Hinnasto</h3></a>
+                <div id="paikkakartta">
+                <img src="./kuvat/tori.jpg" alt="tori"><br>
+                paikkakartta
+            </div>
+        <div id="hintataulukko">
+                <table>
+                    <tr>
+                        <th>Tunnus</th>
+                        <th>Ala m&sup2;</th>
+                        <th>Hinta &euro;</th>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>15</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>A2</td>
+                        <td>15</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>15</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>A4</td>
+                        <td>15</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>B1</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B2</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B3</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B4</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B5</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B6</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B7</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B8</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B9</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B10</td>
+                        <td>8</td>
+                        <td>40</td>
+                    </tr>
+                </table>
+        </div>
+    </div>
 </section>
 
 
