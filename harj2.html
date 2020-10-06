@@ -3,16 +3,24 @@
     <head>
 <title>harj2</title>
 <meta CHARSET = "UTF-8">
+<link rel ="stylesheet" type="text/css" href="./css/harj2.css">
 </head>
 <body>
+    <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#aukiolo">Aukioloajat</a></li>
+        <li><a href="#varaus">Varaus</a></li>
+    </ul>
     <h1>Ravintola Oula</h1>
     <img src="./kuvat/ruoka1.jpg" alt="Keitto">
     <img src="./kuvat/ruoka2.jpg" alt="Hampurilainen/pizza">
     <img src="./kuvat/ruoka3.jpg" alt="Pasta">
     <img src="./kuvat/ruoka4.jpg" alt="Kalaa">
     <img src="./kuvat/ruoka5.jpg" alt="Toinen pasta">
+    <section id="menu">
+    <div id="ruoka">
     <h2>Menu</h2>
-    
+ 
 <h3>Maanantai - 11€</h3>
 
         <p>Juusto-vihanneskeittoa ja kokin sämpylä
@@ -20,7 +28,7 @@
         Marjakiisseliä ja hunajakermavaahtoa</p>
         
         
-        <h3>Tiistai -11€</h3>
+        <h3>Tiistai - 11€</h3>
         
         <p>Kana-fetajustosalaattia ja kokin sämpylä
         Paistettua punakampelaa, pinaattikastiketta<br> ja perunamuusia
@@ -47,7 +55,9 @@
         Naudan paahtopaistia,<br> punaviinikastiketta, kermaperunat ja kasviksia
         Suklaamousse</p>
         <p>(Lounaan hintaan sisältyy juoma vesi, kotikalja tai maito)</p>
-
+</div>
+</section>
+<section id="aukiolo">
 <h3>Aukioloajat</h3>
 <table>
     <tr>
@@ -61,15 +71,65 @@
         <td>17:00-21:00</td>
     </tr>
 </table>
-<br><br><br>
-<address>Ravintola Oula<br>
-        Hallituskatu 12<br>
-        96200 ROVANIEMI<br>
-        
-        Puh. (016) 555 4755<br>
-        Fax (016) 555 4756<br>
-        E-Mail: ravintola.oula@oulanet.fi</address>
+</section>
 
+<section id="varaus">
+<h3>Varaus</h3>
+
+<form>
+    Nimi<br>
+    <input type="text" name="nimi" id="nimi"><br>
+
+    Sähköposti<br>
+    <input type="email"><br>
+
+    Puhelin<br>
+    <input type="tel"><br>
+
+    Henkilö määrä<br>
+    <select name="maara">
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+        <option value = "6">6</option>
+        <option value = "7">7</option>
+        <option value = "8">8</option>
+    </select><br>
+    
+    Päivä<br>
+    <select name="aika">
+        <option value = "ma">ma 10:30-15:00</option>
+        <option value = "ti">ti 10:30-15:00</option>
+        <option value = "ke">ke 10:30-15:00</option>
+        <option value = "to">to 10:30-15:00</option>
+        <option value = "pe">pe 10:30-15:00</option>
+        <option value = "pe">pe 17:00-21:00</option>
+        <option value = "la">la 11:00-15:00</option>
+        <option value = "la">la 17:00-21:00</option>
+    </select><br>
+
+    Erikoistoivomukset<br>
+    <textarea>
+
+
+    </textarea>
+</form>
+</section>
+
+
+<br><br><br>
+<address>
+    Ravintola Oula<br>
+    Hallituskatu 12<br>
+    96100 ROVANIEMI<br>
+        
+    Puh. (016) 555 4755<br>
+    Fax (016) 555 4756<br>
+    E-Mail: ravintola.oula@oulanet.fi
+</address>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d281.2726252548639!2d25.724387860746806!3d66.49715146796821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x442b4bed11188d49%3A0x1657bd88c2a942ae!2sHallituskatu%2012%2C%2096100%20Rovaniemi!5e0!3m2!1sfi!2sfi!4v1601963174288!5m2!1sfi!2sfi" width="500" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
 </body>
 </html>
