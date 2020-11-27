@@ -1,9 +1,38 @@
+body{
+    margin:0;
+}
+
 #alku{
     background-image: url("../kuvat/kirja.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    color:white;
+    height: 100vh;
 }
 
 .linkki{
     color: #f9dec9;
+}
+
+.linkki:hover{
+    text-decoration-line: underline;
+}
+
+#rivi{
+    display:none;
+}
+
+#tietoja{
+    color:#f9dec9;
+}
+
+#tietoja:hover #rivi{
+    display:block;
+}
+
+#nav{
+    overflow: hidden;
+    background-color: #3a405a;
+    display:flex;
+    justify-content: right;
 }
