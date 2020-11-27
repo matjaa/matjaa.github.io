@@ -1,0 +1,13 @@
+body{
+
+}
+#alku{
+    background-image: url("../kuvat/kirja.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.linkki{
+    color: #f9dec9;
+    font-size: 20px;
+}
