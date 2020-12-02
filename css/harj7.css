@@ -18,21 +18,77 @@ body{
     text-decoration-line: underline;
 }
 
-#rivi{
-    display:none;
-}
-
-#tietoja{
-    color:#f9dec9;
-}
-
-#tietoja:hover #rivi{
-    display:block;
-}
-
-#nav{
+.navbar {
     overflow: hidden;
-    background-color: #3a405a;
-    display:flex;
-    justify-content: right;
-}
+    background-color: #3A405A;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    float:right;
+    display: flex;
+  }
+  
+  .navbar a {
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: right;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #3A405A;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 30%;
+    right: 0;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: right;
+    width: 50%;
+    background-color: #3A405A;
+    height: 200px;
+  }
+  
+  .column a {
+    float: none;
+    color: black;
+    display: block;
+    text-align: right;
+  }
+  
+  .column a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
