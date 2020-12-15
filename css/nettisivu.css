@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+}
+
+.etusivu{
+    background-image: url("../kuvat/packraft/Taitokisakuvat-5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.navi{
+    top:0;
+    display: flex;
+    width: 100vw;
+    height: 5vh;
+    background-color: #5abcb9
+}
+
+.boxi1{
+    font-size: 3vh;
+    top:0;
+}
+
+ul{
+    list-style-type: none;
+}
