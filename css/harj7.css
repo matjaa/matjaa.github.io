@@ -208,5 +208,150 @@ body{
   }
 
   .vosa{
-    height: 150vh;
+    display: flexbox;
+  }
+
+  .purkki{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    width: 90vw;
+    left:5vw;
+    position: relative;
+    padding-top: 10vh;
+    height: 50vh;
+  }
+
+  .purkkikuva{
+    height: 39vh;
+    position:relative;
+  }
+
+
+  .totsikko{
+    position: relative;
+    left:2vw;
+    top: -30vh;
+    font-size: 4vh;
+    width: 58vw;
+
+    display: inline-block;
+  }
+
+  .pitka{
+    position: relative;
+    left:30.8vw;
+    top: -34vh;
+    font-size: 2.5vh;
+    width: 58vw;
+  }
+
+  .klisaa{
+    font-size: 2vh;
+    border: 0;
+    position:relative;
+    left:30.8vw;
+    top:-36vh;
+    width: 6vw;
+  }
+
+  .klisaa:hover{
+    text-decoration-line: underline;
+  }
+
+  .purkuva{
+    position: absolute;
+    right: 0;
+    height: 39vh;
+  }
+
+  .totsikko2{
+    width: 58vw;
+    font-size: 4vh;
+    top:-1vh;
+    position: relative;
+  }
+
+  .lyhyt{
+    font-size: 2.5vh;
+    width: 58vw;
+    top:-2vh;
+    position: relative;
+  }
+
+  .klisaa2{
+    font-size: 2vh;
+    position: relative;
+    top:-3vh;
+  }
+
+  .klisaa2:hover{
+    text-decoration-line: underline;
+  }
+
+  .loppu{
+    height: 50vh;
+    background-color: #3A405A;
+    position: relative;
+    display: flex;
+  }
+
+  .kaikkilinkit{
+    width:100%;
+    left:25%;
+    position: relative;
+    display: flex;
+    top:10%;
+    height: 5vh;
+  }
+
+  .linkit{
+    width: 10vw;
+    padding-right: 10vw;
+  }
+
+  .linkki2{
+    color:#f9dec9;
+    font-size: 2vh;
+  }
+
+  .linkki2:hover{
+    text-decoration: underline;
+  }
+
+  .kuvakkeet{
+    position: relative;
+    top: 20vh;
+    left: -22vw;
+    width: 600%;
+    height: 1vh;
+  }
+
+  .kuvake{
+    font-size: 5vh;
+    color:  #f9dec9;
+    padding-right: 1vw;
+  }
+
+  .vika{
+    top:25vh;
+    left: 33vw;
+    color:#f9dec9;
+    display: inline;
+    justify-content: center;
+    width: 33vw;
+    position: absolute;
+
+  }
+
+  .vika2{
+    position: absolute;
+    top: 30vh;
+    left: 41vw;
+    width: 33vw;
+    color:#f9dec9;
+    font-size: 1.5vh;
   }
