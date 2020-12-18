@@ -73,5 +73,19 @@ a{
 }
 
 .galleria{
-    height: 100vh;
+    height: 30vh;
+}
+
+.slide-container {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+img{
+    height: 25vh;
+}
+
+.otsikko{
+    font-size: 4vh;
+    text-align: center;
 }
