@@ -1,0 +1,14 @@
+.haut{
+    display: flex;
+}
+.hakuluokka{
+    width: 50vw;
+    text-align: center;
+}
+.hakunimi{
+    width: 50vw;
+    text-align: center;
+}
+li{
+    list-style: none;
+}
