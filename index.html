@@ -52,7 +52,7 @@
           <a href="#chess">
             <span class="index__no">02</span>
             <span class="index__name">Chess</span>
-            <span class="index__meta">Claude Code vs. ChatGPT <span class="tag tag--soon">Soon</span></span>
+            <span class="index__meta">Claude Code vs. ChatGPT</span>
           </a>
         </li>
         <li>
@@ -100,7 +100,9 @@
           <ul class="tags" aria-label="Technologies">
             <li>Python</li><li>RAG</li><li>Ollama</li><li>ChromaDB</li><li>Gradio</li><li>pytest</li>
           </ul>
-          <p class="project__note">Runs locally, the repository isn't public yet</p>
+          <div class="project__links">
+            <a class="btn btn--ghost btn--small" href="https://github.com/matjaa/ehtobotti">Source on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
 
         <figure class="project__visual">
@@ -147,7 +149,7 @@
       <!-- 02 Chess -->
       <article id="chess" class="project project--flip wrap reveal">
         <div class="project__text">
-          <p class="project__kicker"><span>02</span> C++ · AI-assisted coding <span class="tag tag--soon">Coming soon</span></p>
+          <p class="project__kicker"><span>02</span> C++ · AI-assisted coding</p>
           <h3 class="project__title">Chess</h3>
           <p class="project__lede">I made the same chess game twice, once with Claude Code and once with ChatGPT, to compare the two tools on a real C++ project.</p>
           <p>Both are desktop apps written in C++17 with SFML 3. You play against a bot on Easy, Medium or Hard, and all the normal rules work, including castling, en passant and promotion. Both versions ended up at around 4,000 lines, but they are built quite differently:</p>
@@ -174,18 +176,26 @@
             </div>
             <div class="compare__row" role="row">
               <span role="rowheader">Draws</span>
-              <span role="cell">Repetition, fifty-move rule, insufficient material</span>
-              <span role="cell">Stalemate, threefold repetition</span>
+              <span role="cell">Stalemate, repetition, fifty-move rule, insufficient material</span>
+              <span role="cell">Stalemate, repetition, fifty-move rule</span>
             </div>
           </div>
           <ul class="tags" aria-label="Technologies">
             <li>C++17</li><li>SFML 3</li><li>CMake</li><li>Claude Code</li><li>ChatGPT</li>
           </ul>
-          <p class="project__note">I'll put both versions on GitHub soon</p>
+          <div class="project__links">
+            <a class="btn btn--ghost btn--small" href="https://github.com/matjaa/chessapp-claude">Claude Code version <span aria-hidden="true">↗</span></a>
+            <a class="btn btn--ghost btn--small" href="https://github.com/matjaa/chessapp-gpt">ChatGPT version <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
 
         <figure class="project__visual">
-          <div class="window">
+          <div class="seg" role="tablist" aria-label="Version shown">
+            <button type="button" role="tab" id="tab-claude" aria-selected="true" aria-controls="app-claude">Claude Code</button>
+            <button type="button" role="tab" id="tab-gpt" aria-selected="false" aria-controls="app-gpt" tabindex="-1">ChatGPT</button>
+          </div>
+
+          <div class="window" id="app-claude" role="tabpanel" aria-labelledby="tab-claude">
             <div class="winbar" aria-hidden="true">
               <span class="winbar__title">Chess</span>
               <span class="winbar__ctrls"><i>&#8212;</i><i>&#9633;</i><i>&#10005;</i></span>
@@ -194,18 +204,42 @@
             <div class="chessapp">
               <div class="chessapp__screen">
                 <div class="chessapp__ranks" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
-                <div class="board" id="board" role="img" aria-label="Chess board playing through the opening moves of an Italian Game"></div>
+                <div class="board" data-app="claude" role="img" aria-label="Chess board playing through the opening moves of an Italian Game"></div>
                 <div class="chessapp__files" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span></div>
                 <div class="chessapp__panel">
-                  <p class="chessapp__headline" id="turn">Your move</p>
+                  <p class="chessapp__headline" data-turn>Your move</p>
                   <p class="chessapp__info">You play White vs Hard bot</p>
-                  <ol class="chessapp__moves" id="moves" aria-live="off"></ol>
+                  <ol class="chessapp__moves" data-moves aria-live="off"></ol>
                   <div class="chessapp__buttons" aria-hidden="true"><span>Flip board</span><span>Resign</span></div>
                 </div>
               </div>
             </div>
           </div>
-          <figcaption>A browser recreation of the Claude Code version, using its pieces and board colours.</figcaption>
+
+          <div class="window" id="app-gpt" role="tabpanel" aria-labelledby="tab-gpt" hidden>
+            <div class="winbar" aria-hidden="true">
+              <span class="winbar__title">Chess</span>
+              <span class="winbar__ctrls"><i>&#8212;</i><i>&#9633;</i><i>&#10005;</i></span>
+            </div>
+            <!-- Same layout and colours as the app's main.cpp, scaled from its 1100 x 900 window -->
+            <div class="gptapp">
+              <div class="gptapp__screen">
+                <div class="board board--gpt" data-app="gpt" role="img" aria-label="Chess board playing through the opening moves of an Italian Game">
+                  <div class="gptapp__ranks" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+                  <div class="gptapp__files" aria-hidden="true"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span></div>
+                </div>
+                <div class="gptapp__bar">
+                  <p data-turn>White's turn</p>
+                  <div class="gptapp__buttons" aria-hidden="true"><span>Forfeit</span><span>Restart</span></div>
+                </div>
+                <div class="gptapp__panel">
+                  <p class="gptapp__title">Move history</p>
+                  <p class="gptapp__moves" data-moves aria-live="off"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Browser recreations of both versions, using each app's own pieces, colours and layout.</figcaption>
         </figure>
       </article>
 
@@ -305,7 +339,7 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <p>© 2026 Matias</p>
-      <p>Chess pieces by Colin M.L. Burnett (GPLv2+ / CC BY-SA 3.0)</p>
+      <p>Chess pieces by Colin M.L. Burnett (GPLv2+ / CC BY-SA 3.0) and RhosGFX (CC0)</p>
     </div>
   </footer>
 

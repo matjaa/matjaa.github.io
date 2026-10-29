@@ -150,7 +150,7 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
 .nav a:hover { color: var(--ink); }
 
 /* ---------- Shared bits ---------- */
-.eyebrow, .section-label, .project__kicker, .project__note, figcaption {
+.eyebrow, .section-label, .project__kicker, figcaption {
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: .06em;
@@ -190,19 +190,6 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--ink); }
 .btn--small { padding: 9px 14px; font-size: 14px; }
-
-.tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  line-height: 1;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 5px 8px;
-  border-radius: 999px;
-  vertical-align: middle;
-}
-.tag--soon { background: var(--accent-soft); color: var(--accent); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -314,7 +301,7 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
   line-height: 1.45;
   color: var(--ink);
 }
-.project__text > p:not(.project__lede):not(.project__kicker):not(.project__note) { color: var(--ink-soft); }
+.project__text > p:not(.project__lede):not(.project__kicker) { color: var(--ink-soft); }
 
 .points {
   list-style: none;
@@ -380,9 +367,6 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
   color: var(--ink-soft);
 }
 
-.project__note { margin: 0; font-size: 12px; }
-.project__note::before { content: "→ "; color: var(--accent); }
-
 .project__links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 
 .project__visual { margin: 0; position: sticky; top: 96px; }
@@ -398,6 +382,7 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
   box-shadow: var(--shadow);
   text-decoration: none;
 }
+.window[hidden] { display: none; }
 .window__bar {
   display: flex;
   align-items: center;
@@ -631,7 +616,8 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
 }
 .board__piece.is-captured { opacity: 0; }
 .board.is-resetting .board__piece,
-.board.is-resetting .board__hl { opacity: 0; }
+.board.is-resetting .board__hl,
+.board.is-resetting .board__sel { opacity: 0; }
 
 .chessapp__panel {
   position: absolute;
@@ -680,6 +666,109 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
   place-items: center;
   background: #3e3b37;
   font-size: calc(var(--u) * 17);
+}
+
+/* Switch between the two versions */
+.seg {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: 12px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-raised);
+}
+.seg button {
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 500 13px/1 var(--font-mono);
+  cursor: pointer;
+}
+.seg button:hover { color: var(--ink); }
+.seg button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+.seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ChatGPT version, measured in its own pixels (1100 x 900 window), colours from main.cpp.
+   Text tops are nudged down a little because SFML puts the baseline one font size below the text position. */
+.gptapp { container-type: inline-size; }
+.gptapp__screen {
+  --u: calc(100cqw / 1100);
+  position: relative;
+  aspect-ratio: 1100 / 900;
+  background: #232323;
+  color: #fff;
+  font-family: Arial, "Liberation Sans", Helvetica, sans-serif;
+  overflow: hidden;
+}
+.gptapp__screen p { margin: 0; position: absolute; line-height: 1; white-space: pre; }
+.board--gpt {
+  left: 0;
+  top: 0;
+  width: calc(var(--u) * 800);
+  height: calc(var(--u) * 800);
+}
+.board--gpt .board__piece { padding: 0; }
+.gptapp__ranks, .gptapp__files {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  font-size: calc(var(--u) * 18);
+  line-height: 1;
+}
+.gptapp__ranks { inset: 0; grid-template-rows: repeat(8, 1fr); }
+.gptapp__ranks span { padding: calc(var(--u) * 5.8) 0 0 calc(var(--u) * 5); }
+.gptapp__ranks span:nth-child(odd) { color: #785537; }
+.gptapp__ranks span:nth-child(even) { color: #f5e1be; }
+.gptapp__files { left: 0; right: 0; top: calc(var(--u) * 776.8); grid-template-columns: repeat(8, 1fr); }
+.gptapp__files span { padding-left: calc(var(--u) * 82); }
+.gptapp__files span:nth-child(odd) { color: #f5e1be; }
+.gptapp__files span:nth-child(even) { color: #785537; }
+.board__sel {
+  position: absolute;
+  width: 12.5%;
+  height: 12.5%;
+  background: rgba(255, 255, 0, .27);
+  outline: calc(var(--u) * 3) solid rgba(255, 220, 0, .7);
+  transition: opacity .2s;
+}
+.gptapp__bar {
+  position: absolute;
+  left: 0;
+  top: calc(var(--u) * 800);
+  width: calc(var(--u) * 800);
+  height: calc(var(--u) * 100);
+  background: #2d2d2d;
+}
+.gptapp__bar p { left: calc(var(--u) * 20); top: calc(var(--u) * 38.7); font-size: calc(var(--u) * 24); }
+.gptapp__buttons span {
+  position: absolute;
+  top: calc(var(--u) * 20);
+  width: calc(var(--u) * 160);
+  height: calc(var(--u) * 60);
+  padding-top: calc(var(--u) * 19.7);
+  outline: calc(var(--u) * 2) solid #fff;
+  font-size: calc(var(--u) * 24);
+  line-height: 1;
+}
+.gptapp__buttons span:first-child { left: calc(var(--u) * 440); padding-left: calc(var(--u) * 38); background: #734b4b; }
+.gptapp__buttons span:last-child { left: calc(var(--u) * 620); padding-left: calc(var(--u) * 35); background: #af4141; }
+.gptapp__panel {
+  position: absolute;
+  left: calc(var(--u) * 800);
+  top: 0;
+  width: calc(var(--u) * 300);
+  height: 100%;
+}
+.gptapp__title { left: calc(var(--u) * 25); top: calc(var(--u) * 29.3); font-size: calc(var(--u) * 28); }
+.gptapp__panel .gptapp__moves {
+  left: calc(var(--u) * 25);
+  top: calc(var(--u) * 81.6);
+  font-size: calc(var(--u) * 20);
+  line-height: calc(var(--u) * 23);
+  color: #ebebeb;
 }
 
 /* ---------- Game ---------- */
