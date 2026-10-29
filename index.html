@@ -1,50 +1,314 @@
-<!DOCTYPE html> <!-- Kommentti, tagt määrittää html-version HTML5:ksi-->
-<html>
-    <head>
-        <title>Palautuskansio</title>
-        <meta charset ="UTF-8">
-        <link rel="stylesheet" type="text/css" href="./style/index.css">
-    </head>
-    <body>
-        <h1>Portfolio</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matias · Software Developer</title>
+  <meta name="description" content="Matias's portfolio: an insurance-terms chatbot, a chess game made with Claude Code and ChatGPT, and games including Re:Earth (2nd place, Taitaja 2023).">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232d6a4f'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='21' font-weight='700' fill='%23fff'%3Em%3C/text%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to projects</a>
 
-        <div class="projects">
-            <div class="project">
-                <h3>Kellot soi</h3>
-                <img src="./style/images/kellot.PNG" class="kuva">
-                <p>Tein tämän työn ensimmäisellä vuodella opintojani. Työn tehtävänä oli käyttämällä mallia tehdä oikea sivu, joka näyttäisi mahdollisimman samalta</p>
-                <p>
-                    <a href ="./files/harj7.html">Tarkastele työtä</a>
-                </p>
-            </div>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="wordmark" href="#top" aria-label="Matias, back to top">Matias<span class="wordmark__dot">.</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-            <div class="project">
-                <h3>Fanikauppa</h3>
-                <img src="./style/images/fanikauppa.PNG" class="kuva">
-                <p>Tein tämän työn toisella vuodella opintojani. Käytin työssä React:ia ja tein siitä myös version, joka toimii tietokannalla.</p>
-                <p>
-                    <a href ="https://matjaa.github.io/fanikauppa/">Tarkastele työtä</a>
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>2D Tappelu peli</h3>
-                <img src="" class="kuva">
-                <p>Tein tämän työn ensimmäisellä työssäopi jaksolla. Tehtävänä oli tehdä peli unityä käyttämällä ja dokumentoida sen teko niin, että sitä voisi käyttää kurssi materiaalina</p>
-                <p>
-                    <a href ="">(Ei ole julkaistu)</a>
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>RPG peli Javascript:illä</h3>
-                <img src="" class="kuva">
-                <p>Työ on kesken</p>
-                <p>
-                    <a href ="https://matjaa.github.io/RPG-Game/">Tarkastele työtä</a>
-                </p>
-            </div>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero wrap">
+      <div class="hero__text">
+        <p class="eyebrow">Software developer · Finland</p>
+        <h1 class="hero__title">Hi, I'm <em>Matias</em>.</h1>
+        <p class="hero__lede">I started programming by making games in vocational college. These days I mostly build AI applications and write C++. Here are a few things I've made.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#work">Projects</a>
+          <a class="btn btn--ghost" href="#contact">Contact</a>
         </div>
-            
-    </body>
+      </div>
+
+      <ol class="index" aria-label="Projects">
+        <li>
+          <a href="#ehtobotti">
+            <span class="index__no">01</span>
+            <span class="index__name">Ehtobotti</span>
+            <span class="index__meta">Local AI assistant</span>
+          </a>
+        </li>
+        <li>
+          <a href="#chess">
+            <span class="index__no">02</span>
+            <span class="index__name">Chess</span>
+            <span class="index__meta">Claude Code vs. ChatGPT <span class="tag tag--soon">Soon</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="#re-earth">
+            <span class="index__no">03</span>
+            <span class="index__name">Re:Earth</span>
+            <span class="index__meta">Unity game · 2nd place, Taitaja 2023</span>
+          </a>
+        </li>
+        <li>
+          <a href="#rpg">
+            <span class="index__no">04</span>
+            <span class="index__name">Cool RPG-Game</span>
+            <span class="index__meta">Browser game</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 id="work-title" class="section-label">Projects</h2>
+      </div>
+
+      <!-- 01 Ehtobotti -->
+      <article id="ehtobotti" class="project wrap reveal">
+        <div class="project__text">
+          <p class="project__kicker"><span>01</span> Applied AI · Python</p>
+          <h3 class="project__title">Ehtobotti</h3>
+          <p class="project__lede">A chatbot that answers questions about insurance terms and tells you which section and page the answer came from.</p>
+          <p>Insurance terms are long PDFs that hardly anyone reads. I wanted to see if a small language model running on my own laptop could answer questions about them without making things up. If the answer isn't in the terms, the bot says it couldn't find one.</p>
+          <ul class="points">
+            <li>Retrieval pipeline written from scratch without LangChain: PDF parsing, chunking along the documents' own numbered headings, bge-m3 embeddings and Chroma vector search.</li>
+            <li>The code checks every citation. If the model cites a passage it was never given, the user sees a warning.</li>
+            <li>Runs entirely on a laptop GPU through Ollama, so questions never leave the machine.</li>
+            <li>Measured on a hand-checked question set. I chose the smaller model because the bigger one invented an answer.</li>
+          </ul>
+          <dl class="stats">
+            <div><dt>100%</dt><dd>retrieval hit@5</dd></div>
+            <div><dt>11/12</dt><dd>correct answers, read by hand</dd></div>
+            <div><dt>3/3</dt><dd>correct refusals</dd></div>
+            <div><dt>0</dt><dd>invented citations</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li><li>RAG</li><li>Ollama</li><li>ChromaDB</li><li>Gradio</li><li>pytest</li>
+          </ul>
+          <p class="project__note">Runs locally, the repository isn't public yet</p>
+        </div>
+
+        <figure class="project__visual">
+          <div class="window">
+            <div class="window__bar">
+              <span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="window__url">localhost:7860</span>
+            </div>
+            <!-- Colours and texts copied from the real Gradio UI (default theme) -->
+            <div class="gr">
+              <p class="gr__title">Ehtobotti</p>
+              <div class="gr__tabs" aria-hidden="true"><span class="is-active">Kysy</span><span>Lisää ehtoja</span></div>
+              <div class="gr__block gr__row">
+                <div class="gr__field"><span>Vakuutus</span><span class="gr__select">Autovakuutus</span></div>
+                <div class="gr__field"><span>Vakuutusyhtiö</span><span class="gr__select">LähiTapiola</span></div>
+                <div class="gr__field"><span>Kielimalli</span><span class="gr__select">qwen3.5:4b</span></div>
+              </div>
+              <div class="gr__block gr__chat">
+                <span class="gr__label">Keskustelu</span>
+                <p class="gr__msg gr__msg--user">Korvataanko rikkoutunut tuulilasi?</p>
+                <div class="gr__msg gr__msg--bot">
+                  <p>Kyllä, jos autoon on otettu lasiturva [Autovakuutus, kohta 3.9, s. 5].</p>
+                  <p>Tämä ei ole virallinen korvauspäätös.</p>
+                  <p><strong>Lähteet:</strong></p>
+                  <p class="gr__fold">[Autovakuutus, kohta 3.9, s. 5]</p>
+                  <p class="gr__fold"><strong>Muut haetut otteet (4)</strong></p>
+                  <p class="gr__meta">Malli: qwen3.5:4b · aika 8.7 s</p>
+                </div>
+                <p class="gr__msg gr__msg--user">Voiko vakuutuksen maksaa MobilePaylla?</p>
+                <div class="gr__msg gr__msg--bot">
+                  <p>En löytänyt vastausta vakuutusehdoista.</p>
+                  <p><strong>Haetut otteet (eivät sisältäneet vastausta):</strong></p>
+                  <p class="gr__fold">[Autovakuutus, s. 3]</p>
+                  <p class="gr__meta">Malli: qwen3.5:4b · aika 6.2 s</p>
+                </div>
+              </div>
+              <div class="gr__buttons" aria-hidden="true"><span class="gr__btn gr__btn--primary">Kysy</span><span class="gr__btn">Tyhjennä</span></div>
+            </div>
+          </div>
+          <figcaption>A mock-up of the chat view. The app itself is in Finnish.</figcaption>
+        </figure>
+      </article>
+
+      <!-- 02 Chess -->
+      <article id="chess" class="project project--flip wrap reveal">
+        <div class="project__text">
+          <p class="project__kicker"><span>02</span> C++ · AI-assisted coding <span class="tag tag--soon">Coming soon</span></p>
+          <h3 class="project__title">Chess</h3>
+          <p class="project__lede">I made the same chess game twice, once with Claude Code and once with ChatGPT, to compare the two tools on a real C++ project.</p>
+          <p>Both are desktop apps written in C++17 with SFML 3. You play against a bot on Easy, Medium or Hard, and all the normal rules work, including castling, en passant and promotion. Both versions ended up at around 4,000 lines, but they are built quite differently:</p>
+          <div class="compare" role="table" aria-label="Comparison of the two versions">
+            <div class="compare__row compare__head" role="row">
+              <span role="columnheader"></span>
+              <span role="columnheader">Claude Code</span>
+              <span role="columnheader">ChatGPT</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Structure</span>
+              <span role="cell">Rules and bot in their own libraries, no graphics code</span>
+              <span role="cell">Game loop, menus and input in one 1,500-line main.cpp</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Bot</span>
+              <span role="cell">Alpha-beta, iterative deepening, quiescence search</span>
+              <span role="cell">Minimax with alpha-beta, 2–4 moves deep</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Tests</span>
+              <span role="cell">~600 lines: perft on 6 positions, mate and tactics tests</span>
+              <span role="cell">Tested by hand</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Draws</span>
+              <span role="cell">Repetition, fifty-move rule, insufficient material</span>
+              <span role="cell">Stalemate, threefold repetition</span>
+            </div>
+          </div>
+          <ul class="tags" aria-label="Technologies">
+            <li>C++17</li><li>SFML 3</li><li>CMake</li><li>Claude Code</li><li>ChatGPT</li>
+          </ul>
+          <p class="project__note">I'll put both versions on GitHub soon</p>
+        </div>
+
+        <figure class="project__visual">
+          <div class="window">
+            <div class="winbar" aria-hidden="true">
+              <span class="winbar__title">Chess</span>
+              <span class="winbar__ctrls"><i>&#8212;</i><i>&#9633;</i><i>&#10005;</i></span>
+            </div>
+            <!-- Same layout and colours as the app's Theme.hpp, scaled from its 1040 x 720 window -->
+            <div class="chessapp">
+              <div class="chessapp__screen">
+                <div class="chessapp__ranks" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+                <div class="board" id="board" role="img" aria-label="Chess board playing through the opening moves of an Italian Game"></div>
+                <div class="chessapp__files" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span></div>
+                <div class="chessapp__panel">
+                  <p class="chessapp__headline" id="turn">Your move</p>
+                  <p class="chessapp__info">You play White vs Hard bot</p>
+                  <ol class="chessapp__moves" id="moves" aria-live="off"></ol>
+                  <div class="chessapp__buttons" aria-hidden="true"><span>Flip board</span><span>Resign</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>A browser recreation of the Claude Code version, using its pieces and board colours.</figcaption>
+        </figure>
+      </article>
+
+    </section>
+
+    <!-- Earlier projects -->
+    <section id="earlier" class="earlier wrap" aria-labelledby="earlier-title">
+      <h2 id="earlier-title" class="section-label">Earlier projects</h2>
+      <div class="earlier__grid">
+
+        <!-- 03 Re:Earth -->
+        <article id="re-earth" class="card reveal">
+          <a class="card__media window--game" href="https://matjaa.itch.io/re-earth" aria-label="Play Re:Earth on itch.io">
+            <img src="assets/img/re-earth.webp" width="1200" height="645" alt="Re:Earth: a pixel-art market camp above the clouds, with floating machines in the sky" loading="lazy">
+            <span class="card__award"><span class="card__medal" aria-hidden="true">2</span> 2nd place · Taitaja 2023</span>
+            <span class="game__play"><span class="game__play-icon" aria-hidden="true">▶</span> Play</span>
+          </a>
+          <div class="card__body">
+            <p class="project__kicker"><span>03</span> Unity · C# · Game jam</p>
+            <h3 class="card__title">Re:Earth</h3>
+            <p>A short 2D action game we made for Taitaja 2023, the Finnish vocational skills competition. We got <strong>second place</strong> in game production (Pelituotanto), only 0.01 points behind the winners.</p>
+            <p>The final was basically a two-day game jam, and on the third day we pitched the game. There were two of us and we both wrote code. The art is from free asset packs.</p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Unity</li><li>C#</li><li>Team of two</li><li>2 days</li>
+            </ul>
+            <div class="project__links">
+              <a class="btn btn--solid btn--small" href="https://matjaa.itch.io/re-earth">Play on itch.io <span aria-hidden="true">↗</span></a>
+              <a class="btn btn--ghost btn--small" href="https://www.skillsfinland.fi/application/files/3416/8381/3598/Taitaja2023_tulokset.pdf#page=11">Official results (PDF) <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 RPG -->
+        <article id="rpg" class="card reveal">
+          <a class="card__media window--game" href="https://matjaa.github.io/RPG-Game/" aria-label="Play Cool RPG-Game">
+            <img src="assets/img/rpg-map.webp" width="1200" height="750" alt="The castle courtyard from Cool RPG-Game: stone paths, trees and statues in pixel art" loading="lazy">
+            <span class="game__hud" aria-hidden="true">♥♥♥♥♥</span>
+            <span class="game__play"><span class="game__play-icon" aria-hidden="true">▶</span> Play</span>
+            <span class="game__keys" aria-hidden="true"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move <kbd class="kbd--wide">Space</kbd> attack</span>
+          </a>
+          <div class="card__body">
+            <p class="project__kicker"><span>04</span> JavaScript · Canvas</p>
+            <h3 class="card__title">Cool RPG-Game</h3>
+            <p>My final project in vocational college. It's a top-down action RPG that runs in the browser: you walk around a castle, fight enemies and finally a boss.</p>
+            <p>I made it with plain JavaScript and the Canvas API, without a game engine, so the game loop, animations and collisions are all my own code. The map is made in Tiled.</p>
+            <ul class="tags" aria-label="Technologies">
+              <li>JavaScript</li><li>Canvas API</li><li>Tiled</li>
+            </ul>
+            <div class="project__links">
+              <a class="btn btn--solid btn--small" href="https://matjaa.github.io/RPG-Game/">Play in browser <span aria-hidden="true">↗</span></a>
+              <a class="btn btn--ghost btn--small" href="https://github.com/matjaa/RPG-Game">Source <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about wrap reveal" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-label">About me</h2>
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="about__big">I'm Matias, a software developer from Finland.</p>
+          <p>I got into programming through games. In vocational college I made games with Unity and JavaScript, and at Taitaja 2023 our game Re:Earth got second place.</p>
+          <p>Now I'm learning to build applications with AI: chatbot that answer from your own documents, comparing language models, and programming with tools like Claude Code and ChatGPT. I've also been writing more C++.</p>
+          <p>I like to test what I make properly, so I know it really works.</p>
+        </div>
+        <dl class="toolbox">
+          <div>
+            <dt>Languages</dt>
+            <dd>Python, C++, C#, JavaScript, HTML &amp; CSS</dd>
+          </div>
+          <div>
+            <dt>AI</dt>
+            <dd>Ollama, RAG, embeddings, ChromaDB, model evaluation, Claude Code, ChatGPT</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Git, CMake, pytest, Unity, Visual Studio, VS Code</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact wrap reveal" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-label">Contact</h2>
+      <p class="contact__lede">The easiest way to reach me is by email.</p>
+      <div class="contact__row">
+        <a class="contact__email" href="mailto:matias.jaasko@gmail.com">matias.jaasko@gmail.com</a>
+        <button class="btn btn--ghost btn--small" type="button" id="copy-email" data-email="matias.jaasko@gmail.com">Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© 2026 Matias</p>
+      <p>Chess pieces by Colin M.L. Burnett (GPLv2+ / CC BY-SA 3.0)</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
 </html>
