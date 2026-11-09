@@ -211,9 +211,8 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
   margin: 18px 0 28px;
 }
 .hero__title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--accent);
-  font-weight: 400;
 }
 
 .hero__lede {
